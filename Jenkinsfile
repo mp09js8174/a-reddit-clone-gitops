@@ -31,7 +31,7 @@ pipeline {
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
                 """
-                withCredentials([gitUsernamePassword(credentialsId: 'Git-Token', gitToolName: 'Default')]) {
+                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
                     sh "git push https://github.com/mp09js8174/a-reddit-clone-gitops"
                 }
             }
